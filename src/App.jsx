@@ -1,40 +1,33 @@
-
-import React, { useState } from 'react';
-import ProductList from './ProductList';
-import './App.css';
-import AboutUs from './AboutUs';
-
 function App() {
-  
-  const [showProductList, setShowProductList] = useState(false);
-
-  const handleGetStartedClick = () => {
-    setShowProductList(true);
-  };
-
   return (
-    <div className="app-container">
-      <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
-        <div className="background-image"></div>
-        <div className="content">
-         <div className="landing_content">
-         <h1>Welcome To Paradise Nursery</h1>
-          <div className="divider"></div>
-          <p>Where Green Meets Serenity</p>
-         
-          <button className="get-started-button" onClick={handleGetStartedClick}>
-            Get Started
-          </button>
-         </div>
-          <div className="aboutus_container">
-          <AboutUs/>
-          </div>
-          </div>
+    <div
+      style={{
+        minHeight: "100vh",
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1501004318641-b39e6451bec6)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        color: "white",
+        padding: "40px",
+      }}
+    >
+      <h1>Paradise Nursery</h1>
 
-      </div>
-      <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
-        <ProductList />
-      </div>
+      <p style={{ maxWidth: "500px", fontSize: "18px" }}>
+        Welcome to Paradise Nursery, your one-stop shop for beautiful,
+        healthy houseplants that bring life and calm into your home.
+      </p>
+
+      <button
+        style={{
+          marginTop: "20px",
+          padding: "12px 20px",
+          fontSize: "16px",
+          cursor: "pointer",
+        }}
+      >
+        Get Started
+      </button>
     </div>
   );
 }
